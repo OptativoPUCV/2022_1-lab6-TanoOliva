@@ -61,7 +61,16 @@ int is_valid(Node* n){
   }
 
   for (int s = 0; s < 9; s++){
-    int validM[10]
+    int validM[10] = {0};
+    int k=s,p;
+
+    for (p = 0; p < 9; p++){
+      int i = 3*(k/3) + (p/3);
+      int j = 3*(k%3) + (p%3);
+
+      if (validM[n->sudo[i][j]] != 0) return 0;
+      if (validM[n->sudo[i][j]] == 0 && n->sudo[i][j] != 0) validM[n->sudo[i][j]] = 1;
+    }
   }
   return 1;
 }
