@@ -44,32 +44,30 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-  for (int i = 0;1 < 9; i++){
-    int validRow[10] = {0};
+  for ( int i = 0 ; i < 9 ; i++){
+    int validar[10] = {0};
     for (int j = 0; j < 9; j++){
-      if (validRow[n->sudo[i][j]]) return 0;
-      if (validRow[n->sudo[i][j]] == 0 && n->sudo[i][j] != 0) validRow[n->sudo[i][j]] = 1;
+      if (validar[n->sudo[i][j]]) return 0;
+      if (validar[n->sudo[i][j]] == 0 && n->sudo[i][j] != 0) validar[n->sudo[i][j]] = 1; 
     }
   }
 
-  for (int col = 0; col < 9; col++){
-    int validColumn[10] = {0};
-    for (int row = 0; row < 9; row++){
-      if (validColumn[n->sudo[row][col]] != 0) return 0;
-      if (validColumn[n->sudo[row][col]] == 0 && n->sudo[row][col] != 0) validColumn[n->sudo[row][col]] = 1; 
+  for ( int a = 0 ; a < 9 ; a++){
+    int validar2[10] = {0};
+    for ( int b = 0 ; b < 9 ; b++ ){
+      if ( validar2[n->sudo[b][a]] != 0) return 0;
+      if ( validar2[n->sudo[b][a]] == 0 && n->sudo[b][a] != 0) validar2[n->sudo[b][a]] = 1;
     }
   }
 
-  for (int s = 0; s < 9; s++){
-    int validM[10] = {0};
-    int k=s,p;
-
-    for (p = 0; p < 9; p++){
-      int i = 3*(k/3) + (p/3);
-      int j = 3*(k%3) + (p%3);
-
-      if (validM[n->sudo[i][j]] != 0) return 0;
-      if (validM[n->sudo[i][j]] == 0 && n->sudo[i][j] != 0) validM[n->sudo[i][j]] = 1;
+  for ( int x = 0 ; x < 9 ; x++){
+    int validar3[10] = {0};
+    int k = x;
+    for ( int y = 0 ; y < 9 ; y++){
+      int z = 3*(k/3) + (y/3);
+      int w = 3*(k%3) + (y%3);
+      if ( validar3[n->sudo[z][w]] != 0) return 0;
+      if ( validar3[n->sudo[z][w]] == 0 && n->sudo[z][w] != 0) validar3[n->sudo[z][w]] = 1;
     }
   }
   return 1;
