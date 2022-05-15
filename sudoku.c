@@ -44,6 +44,25 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
+  for (int i = 0;1 < 9; i++){
+    int validRow[10] = {0};
+    for (int j = 0; j < 9; j++){
+      if (validRow[n->sudo[i][j]]) return 0;
+      if (validRow[n->sudo[i][j]] == 0 && n->sudo[i][j] != 0) validRow[n->sudo[i][j]] = 1;
+    }
+  }
+
+  for (int col = 0; col < 9; col++){
+    int validColumn[10] = {0};
+    for (int row = 0; row < 9; row++){
+      if (validColumn[n->sudo[row][col]] != 0) return 0;
+      if (validColumn[n->sudo[row][col]] == 0 && n->sudo[row][col] != 0) validColumn[n->sudo[row][col]] = 1; 
+    }
+  }
+
+  for (int s = 0; s < 9; s++){
+    int validM[10]
+  }
   return 1;
 }
 
@@ -61,7 +80,7 @@ List* get_adj_nodes(Node* n){
           pushBack(list, adj_n);
         }
 
-        return list;
+        //return list;
       }
     }
   }

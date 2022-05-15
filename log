@@ -44,3 +44,13 @@ Sun May 15 13:54:35 HSP 2022:
  tests:  4|3
 total_score: 30/70
 be19ec3
+Sun May 15 14:20:23 HSP 2022: 
+ sudoku.c | 21 ++++++++++++++++++++-
+ 1 file changed, 20 insertions(+), 1 deletion(-)
+In file included from test.c:5:0:
+sudoku.c: In function 'is_valid':
+sudoku.c:65:3: error: expected '=', ',', ';', 'asm' or '__attribute__' before '}' token
+   }
+   ^
+Compilation failed
+b923caf
