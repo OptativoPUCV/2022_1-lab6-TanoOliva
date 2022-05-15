@@ -52,7 +52,7 @@ List* get_adj_nodes(Node* n){
   List* list=createList();
   for (int f = 0; f <= 8; f++){
     for (int k = 0; k <= 8; k++){
-      if (n->sudo[f][f] == 0){
+      if (n->sudo[f][k] == 0){
         for (int cont = 1; cont <= 9; cont++){
           Node *adj_n = (Node *) malloc(sizeof(Node));
           adj_n = copy(n);
@@ -61,7 +61,7 @@ List* get_adj_nodes(Node* n){
           pushBack(list, adj_n);
         }
 
-        return list;
+        //return list;
       }
     }
   }
