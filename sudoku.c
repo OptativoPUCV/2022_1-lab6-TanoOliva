@@ -55,7 +55,7 @@ List* get_adj_nodes(Node* n){
       if (n->sudo[f][f] == 0){
         for (int cont = 1; cont <= 9; cont++){
           Node *adj_n = (Node *) malloc(sizeof(Node));
-          // adj_n = copy(n);
+          adj_n = copy(n);
           adj_n->sudo[f][k] = cont;
 
           pushBack(list, adj_n);
